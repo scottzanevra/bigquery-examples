@@ -1,5 +1,5 @@
 
-# Create The Base Table
+--# Create The Base Table
 CREATE OR REPLACE TABLE `data-producer-one.test_ds.hoc_gsheet`
 (
  country STRING NOT NULL,
