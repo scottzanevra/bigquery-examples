@@ -66,7 +66,7 @@ SELECT * FROM test_scd.vw_dim_customer ORDER BY CustomerNO, StartDate;
 SELECT * FROM test_scd.vw_dim_customer WHERE EndDate=DATE'9999-12-31' AND IsDeleted !=1
 
 
--- Helper Script whne stuff is broken
+-- Helper Script when stuff is broken
 DELETE `test_scd.customer_type_2`
 WHERE CustomerID = TO_HEX(MD5('001'))
 
