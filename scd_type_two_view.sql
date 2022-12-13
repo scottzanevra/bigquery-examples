@@ -14,7 +14,9 @@ CREATE OR REPLACE TABLE
     DeltaType BYTEINT
   )
 PARTITION BY
-  BUSINESS_DATE;
+  BUSINESS_DATE
+  OPTIONS (
+    require_partition_filter = TRUE);
 
 -- 2) Insert records
 -- After the table is created, use the following scripts to insert records directly:
@@ -61,7 +63,7 @@ SELECT * FROM test_scd.vw_dim_customer ORDER BY CustomerNO, StartDate;
 
 
 -- To query the latest data, use this filter: EndDate=DATE'9999-12-31'.
--- You can also use the typical BETWEEN AND clause to query as-was data.
+-- You can also use the BETWEEN clause to query as-was data.
 
 SELECT * FROM test_scd.vw_dim_customer WHERE EndDate=DATE'9999-12-31' AND IsDeleted !=1
 
