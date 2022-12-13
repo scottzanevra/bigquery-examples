@@ -1,5 +1,5 @@
 
-SELECT * FROM `dataplex-demo-342803.dbt_demo_staging.stg_client` LIMIT 1000;
+SELECT * FROM `<your_project_id>.dbt_demo_staging.stg_client` LIMIT 1000;
 
 
 CREATE ROW ACCESS POLICY customer_data_chicago
@@ -50,4 +50,4 @@ GRANT TO ('domain:example.com')
 FILTER USING (SESSION_USER() IN UNNEST(reporting_chain));
 
 
-DROP ALL ROW ACCESS POLICIES ON `dataplex-demo-342803.dbt_demo_staging.stg_client`;
+DROP ALL ROW ACCESS POLICIES ON `<your_project_id>.dbt_demo_staging.stg_client`;
